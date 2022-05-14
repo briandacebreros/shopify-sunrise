@@ -2,10 +2,10 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "disabled": true,
       "blocks": {
         "heading": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Image banner",
             "heading_size": "large"
@@ -13,6 +13,7 @@
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_style": "body"
@@ -36,6 +37,8 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/collection_image.jpg",
+        "image_2": "shopify:\/\/shop_images\/janitorial_supplies_collection.jpg",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "adapt_height_first_image": false,
@@ -97,18 +100,17 @@
     },
     "collage": {
       "type": "collage",
-      "disabled": true,
       "blocks": {
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "janitorial-supplies"
           }
         },
         "product": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "pinepower-multi-use-pine-cleaner-gal",
             "second_image": false
           }
         },
