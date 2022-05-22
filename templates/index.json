@@ -50,6 +50,27 @@
         "show_text_below": false
       }
     },
+    "16532011068c7f9abf": {
+      "type": "navtive-product-slider",
+      "settings": {
+        "full_width": false,
+        "title": "Featured collection",
+        "align_text": "text-center",
+        "font_size": 24,
+        "collection": "janitorial-supplies",
+        "products_to_show": 4,
+        "button": "",
+        "button_link": "",
+        "grid_desktop": "lg:grid-cols-5",
+        "grid_tablet": "md:grid-cols-3",
+        "grid_mobile": "grid-cols-2",
+        "slider": true,
+        "items_per_row": "lg:w-1\/4",
+        "items_per_row_tablet": "md:w-1\/2",
+        "items_per_row_mobile": "w-1\/2",
+        "show_secondary_image": true
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "disabled": true,
@@ -201,6 +222,7 @@
   },
   "order": [
     "image_banner",
+    "16532011068c7f9abf",
     "rich_text",
     "featured_collection",
     "collage",
