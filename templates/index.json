@@ -24,6 +24,7 @@
         "16532014230941ec3c-1": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/collection_image.jpg",
             "heading": "Image slide",
             "heading_size": "medium",
             "subheading": "Tell your brand's story through images",
