@@ -145,35 +145,6 @@
         "show_secondary_image": true
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "disabled": true,
@@ -230,19 +201,6 @@
         "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "heading": "",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "multicolumn": {
       "type": "multicolumn",
       "disabled": true,
@@ -250,15 +208,17 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/warehouse-corridor.jpg",
+            "title": "Environmental",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. <\/p>",
             "link_label": "",
-            "link": ""
+            "link": "shopify:\/\/pages\/contact"
           }
         },
         "column2": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/warehouse-corridor.jpg",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
@@ -299,10 +259,8 @@
     "16532014234458faa5",
     "image_banner",
     "16532011068c7f9abf",
-    "rich_text",
     "featured_collection",
     "collage",
-    "video",
     "multicolumn"
   ]
 }
