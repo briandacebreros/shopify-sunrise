@@ -141,7 +141,7 @@
         "slider": true,
         "items_per_row": "lg:w-1\/4",
         "items_per_row_tablet": "md:w-1\/2",
-        "items_per_row_mobile": "w-1\/2",
+        "items_per_row_mobile": "w-full",
         "show_secondary_image": true
       }
     },
