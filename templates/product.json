@@ -12,7 +12,8 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "caption": {
           "type": "text",
@@ -23,11 +24,13 @@
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+          }
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -37,7 +40,8 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -198,7 +202,6 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "color_scheme": "background-1",
