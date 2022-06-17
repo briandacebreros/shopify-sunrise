@@ -178,7 +178,7 @@
         "products_to_show": 4,
         "button": "",
         "button_link": "",
-        "grid_desktop": "lg:grid-cols-4",
+        "grid_desktop": "lg:grid-cols-3",
         "grid_tablet": "md:grid-cols-3",
         "grid_mobile": "grid-cols-2",
         "slider": false,
