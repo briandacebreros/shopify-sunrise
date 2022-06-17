@@ -25,13 +25,13 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/padre-usa.png",
-          "logo_width": 190,
+          "logo": "shopify:\/\/shop_images\/unick-logo_1.png",
+          "logo_width": 90,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "show_line_separator": true,
           "enable_sticky_header": true,
-          "margin_bottom": 56
+          "margin_bottom": 0
         }
       },
       "footer": {
@@ -40,14 +40,13 @@
           "53c1c391-33d3-4045-94f0-77c637d06874": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/padre-usa.png",
+              "image": "shopify:\/\/shop_images\/unick-logo_1.png",
               "image_width": 100,
               "alignment": "center"
             }
           },
           "footer-2": {
             "type": "text",
-            "disabled": true,
             "settings": {
               "heading": "Our mission",
               "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
@@ -55,18 +54,16 @@
           },
           "footer-0": {
             "type": "link_list",
-            "disabled": true,
             "settings": {
               "heading": "Company",
-              "menu": ""
+              "menu": "company"
             }
           },
           "footer-1": {
             "type": "link_list",
-            "disabled": true,
             "settings": {
               "heading": "Quick links",
-              "menu": ""
+              "menu": "products"
             }
           }
         },
@@ -109,6 +106,8 @@
             "announcement-bar-0": {
               "type": "announcement",
               "settings": {
+                "bg_color": "#fff",
+                "text_color": "#000"
               }
             }
           },
