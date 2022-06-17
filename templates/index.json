@@ -178,11 +178,11 @@
         "products_to_show": 4,
         "button": "",
         "button_link": "",
-        "grid_desktop": "lg:grid-cols-3",
+        "grid_desktop": "lg:grid-cols-6",
         "grid_tablet": "md:grid-cols-3",
         "grid_mobile": "grid-cols-2",
         "slider": true,
-        "items_per_row": "lg:w-1\/5",
+        "items_per_row": "lg:w-1\/4",
         "items_per_row_tablet": "md:w-1\/2",
         "items_per_row_mobile": "w-1\/2",
         "show_secondary_image": false
