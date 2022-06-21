@@ -26,6 +26,21 @@
   {%- endstyle -%}
 {%- endif -%}
 
+<h1>SLIDE 1 - AQUI</h1>
+<slider-component class="slider-mobile-gutter">
+  <ul class="grid grid--2-col slider slider--tablet grid--peek" role="list">
+    <li id="Slider-{{ section.id }}-1" class="slider__slide">
+      <h1>Slide 1</h1>>
+    </li>
+    <li id="Slider-{{ section.id }}-2" class="slider__slide">
+      <h1>Slide 1</h1>>
+    </li>
+  </ul>
+</slider-component>
+
+
+
+
 <slideshow-component class="slider-mobile-gutter{%if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}">
   <div class="slideshow banner banner--{{ section.settings.slide_height }} grid grid--1-col slider slider--everywhere{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %}{% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
     id="Slider-{{ section.id }}"

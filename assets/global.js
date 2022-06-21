@@ -592,6 +592,7 @@ class SliderComponent extends HTMLElement {
 }
 
 customElements.define('slider-component', SliderComponent);
+customElements.define('slideshow-component', SliderComponent);
 
 class SlideshowComponent extends SliderComponent {
   constructor() {
