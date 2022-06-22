@@ -1,0 +1,140 @@
+<style>
+      .swiper {
+        width: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+</style>
+
+
+
+
+<!-- Swiper -->
+<div class="swiper mySwiper_products">
+    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Featured Products</h2>
+
+    <div class="swiper-wrapper">
+
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+            <div class="swiper-slide">
+                {% render 'product-item',
+                    card_product: product,
+                    show_secondary_image: false,
+                %}
+            </div>
+        {%- endfor -%}
+        <div class="swiper-slide">Slide de prueba</div>
+        <div class="swiper-slide">Slide de prueba 2</div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper_products", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        120: {
+        slidesPerView: 1,
+        spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+        slidesPerView: 2,
+        spaceBetween: 30
+        },
+        // when window width is >= 640px
+        690: {
+        slidesPerView: 3,
+        spaceBetween: 40
+        },
+        900: {
+        slidesPerView: 4,
+        spaceBetween: 40
+        }
+      }
+      
+    });
+  </script>
+
+
+  
+{% schema %}
+  {
+    "name": "Slider Products",
+    "tag": "section",
+    "class": "featured-collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Featured collection",
+        "label": "t:sections.featured-collection.settings.title.label"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Align text",
+        "default": "text-center",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Center"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "t:sections.featured-collection.settings.collection.label"
+      }   
+    ],
+    "presets": [
+      {
+        "name": "Native product slider"
+      }
+    ]
+  }
+  {% endschema %}
+  
