@@ -1,59 +1,5 @@
 {
   "sections": {
-    "16554890988312a24f": {
-      "type": "slideshow",
-      "blocks": {
-        "16554890981c4c2deb-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/janitorial_supplies_collection.jpg",
-            "heading": "Image slide",
-            "heading_size": "medium",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 50,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "16554890981c4c2deb-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/collection_image.jpg",
-            "heading": "Image slide",
-            "heading_size": "medium",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "16554890981c4c2deb-0",
-        "16554890981c4c2deb-1"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
     "165548339889fdcca9": {
       "type": "navtive-product-slider",
       "settings": {
@@ -124,11 +70,19 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1655938675cf1b291f": {
+      "type": "slider-products",
+      "settings": {
+        "title": "Featured collection",
+        "align_text": "text-center",
+        "collection": "janitorial-supplies"
+      }
     }
   },
   "order": [
-    "16554890988312a24f",
     "165548339889fdcca9",
-    "multicolumn"
+    "multicolumn",
+    "1655938675cf1b291f"
   ]
 }
