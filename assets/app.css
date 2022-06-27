@@ -1770,3 +1770,36 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+
+
+
+/* CUSTOM CSS */
+h1 {
+  font-size: 16px;
+  font-weight: 600;
+
+}
+h2 {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+.button{ 
+  position: relative;
+  display:inline-block;
+  text-align: center;
+}
+.filled-button {
+    background-color: pink;
+    color: #000;
+    min-width: 120px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 25px;
+    font-size: 14px;
+}

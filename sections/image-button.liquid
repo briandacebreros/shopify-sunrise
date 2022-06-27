@@ -1,0 +1,137 @@
+<style>
+  .image-button {
+    position: relative;
+    display: inline-block;
+    height: 350px;
+  }
+  .image-button > div {
+    position: relative;
+    display: block;
+    z-index: 3;
+  }
+  .cover-screen {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 2;
+  }
+</style>
+
+<div class="grid grid-cols-2">
+{%- for block in section.blocks -%}
+  <div class="image-button" style="background: url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; background-size: cover;">
+    <span class="cover-screen"></span>
+    <div>
+      <h1>{{ block.settings.title }}</span></h1><br>
+      <span>{{ block.settings.info }}</span><br>
+      <a class="button" href="{{ block.settings.link }}">{{ block.settings.button }}</a>  
+    </div>
+    
+  </div>
+{%- endfor -%}
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Image Button",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Multicolumn",
+      "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "image_width",
+      "options": [
+        {
+          "value": "third",
+          "label": "t:sections.multicolumn.settings.image_width.options__1.label"
+        },
+        {
+          "value": "half",
+          "label": "t:sections.multicolumn.settings.image_width.options__2.label"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.multicolumn.settings.image_width.options__3.label"
+        }
+      ],
+      "default": "full",
+      "label": "t:sections.multicolumn.settings.image_width.label"
+    },
+    {
+      "type": "select",
+      "id": "column_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.multicolumn.settings.column_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.multicolumn.settings.column_alignment.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.multicolumn.blocks.column.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "Header"
+        },
+        {
+          "type": "text",
+          "id": "info",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Buton text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Button",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
