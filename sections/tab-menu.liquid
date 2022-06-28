@@ -98,7 +98,7 @@
   <div class="container-swiperMenuTabs">
     <div class="tab">
         <div class="swiperMenuTabs">
-            <div class="swiper-scrollbar mb-10"></div>
+            
             <div class="swiper-wrapper">
                 {%- assign i = 0 -%}
                 {% for link in section.settings.menu.links -%}
@@ -108,6 +108,7 @@
                     {% assign i = i | plus: 1 %}
                 {%- endfor %}
             </div>
+            <div class="swiper-scrollbar2" style="height:5px;"></div>
         </div>
     </div>
   </div>
@@ -118,7 +119,7 @@
 {% for link in section.settings.menu.links -%}
 
     <div id="{{ link.handle }}" class="tabcontent container-swiperMenuTabs"
-          {% if i == 0 %}style="height:325px; display:block;"{% else %}style="height:325px;"{% endif %} >
+          {% if i == 0 %}style="height:350px; display:block;"{% else %}style="height:325px;"{% endif %} >
           {% assign i = i | plus: 1 %}
         <h3>{{ link.title }}</h3>
         <a class="button filled-button" href="{{ link.url }}">Ver todo</a>
@@ -151,7 +152,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination2"></div>
                 
             </div>
             
@@ -181,7 +182,7 @@
 
     var swiper = new Swiper(".swiperMenuTabs", {
       scrollbar: {
-        el: ".swiper-scrollbar"
+        el: ".swiper-scrollbar2"
       },
       breakpoints: {
         // when window width is >= 320px
@@ -200,7 +201,7 @@
         spaceBetween: 40
         },
         900: {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 40
         }
       }
@@ -209,7 +210,7 @@
 
     var swiper = new Swiper(".swiperMenuTabsSub", {
       pagination: {
-          el: ".swiper-pagination",
+          el: ".swiper-pagination2",
       },
       breakpoints: {
         // when window width is >= 320px
