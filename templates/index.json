@@ -115,12 +115,20 @@
         "image_width": "full",
         "column_alignment": "left"
       }
+    },
+    "16564427570669f660": {
+      "type": "tab-menu",
+      "settings": {
+        "menu": "main-menu",
+        "title": "Shop"
+      }
     }
   },
   "order": [
     "165593878389ec2bc8",
     "1655938675cf1b291f",
     "multicolumn",
-    "1656442669c78a9775"
+    "1656442669c78a9775",
+    "16564427570669f660"
   ]
 }
