@@ -1,0 +1,57 @@
+body {
+
+}
+
+
+.mySwiper_products {
+    height: auto;
+    padding-bottom: 55px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.product-item-container .descripcion {
+    min-height: ;
+}
+.product-item-container .imagen-producto {
+    position: relative;
+    display: block;
+}
+.product-item-container h4 {
+    font-size: 14px;
+    color: red;
+    font-weight: 600;
+    text-align: left;
+}
+.product-item-container .subtitle {
+    color: purple;
+    font-size: 12px;
+    text-align: left;
+}
+.product-item-image {
+    position: relative;
+    display: block;
+    height: 225px;
+}
+.button-buynow {
+    background-color: rgb(73, 19, 19);
+    color: #FFF;
+    border-radius: 20px;
+    padding: 3px;
+    font-size: 12px;
+    min-width: 100px;
+}
+.button-details {
+    background-color: #FFF;
+    color: purple;
+    border: solid 1px;
+    border-color: purple;
+    border-radius: 20px;
+    padding: 3px;
+    font-size: 12px;
+    min-width: 100px;
+}
+
+
+footer {
+    background-color: #2d2d2d;
+}

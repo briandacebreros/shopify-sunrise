@@ -1,0 +1,46 @@
+
+
+
+
+<style>
+</style>
+    <div class="about-us grid grid-cols-3 gap-4 font-mono text-sm font-bold leading-6">
+        <div class="p-4 col-span-2">
+            <h1>{{ section.settings.title }}</h1>
+            <p>{{ section.settings.text1 }}</p>
+        </div>
+        <div class="p-4"><p><img src="{{ section.settings.imagen | img_url: '1500x' }}" /></p></div>
+        <div class="p-4 col-span-3">
+            <p>{{ section.settings.text2 }}</p>
+        </div>
+    </div>
+    
+
+{% schema %}
+{
+    "name": "About Us",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Titulo",
+            "default": "About Us"
+        },
+        {
+            "type": "richtext",
+            "id": "text1",
+            "label": "Primer texto"
+        },
+        {
+            "type": "richtext",
+            "id": "text2",
+            "label": "Segundo texto"
+            },
+        {
+            "type": "image_picker",
+            "id": "imagen",
+            "label": "Imagen"
+        }
+    ]
+}
+{% endschema %}

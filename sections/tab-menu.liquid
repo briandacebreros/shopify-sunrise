@@ -97,7 +97,7 @@
 {% if section.settings.menu != blank %}
   <div class="container-swiperMenuTabs">
     <div class="tab">
-        <div class="swiper swiperMenuTabs">
+        <div class="swiperMenuTabs">
             <div class="swiper-scrollbar mb-10"></div>
             <div class="swiper-wrapper">
                 {%- assign i = 0 -%}
@@ -123,7 +123,7 @@
         <h3>{{ link.title }}</h3>
         <a class="button filled-button" href="{{ link.url }}">Ver todo</a>
         {% if link.levels > 0 %}
-            <div class="swiper swiperMenuTabsSub">
+            <div class="swiperMenuTabsSub">
                 <div class="swiper-wrapper">
                     {% for sublink in link.links -%}
                         <div class="swiper-slide tab-menu-subcategory" 
