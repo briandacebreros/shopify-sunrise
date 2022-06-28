@@ -41,12 +41,13 @@
     },
     "multicolumn": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
         "column1": {
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/janitorial_supplies_collection.jpg",
-            "title": "",
+            "title": "Medio ambiente somos bien friendly",
             "text": "",
             "link_label": "",
             "link": ""
@@ -80,11 +81,46 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1656442669c78a9775": {
+      "type": "image-button",
+      "blocks": {
+        "1656442669079de43c-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-cleyder-duque-3821385.jpg",
+            "title": "Medio ambiente",
+            "info": "Somos bien friendly con el medio ambiente verdad?",
+            "button": "",
+            "link": ""
+          }
+        },
+        "1656442669079de43c-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/warehouse-corridor.jpg",
+            "title": "Become a Member!",
+            "info": "Get up to 30% OFF",
+            "button": "Sign up",
+            "link": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "1656442669079de43c-0",
+        "1656442669079de43c-1"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "image_width": "full",
+        "column_alignment": "left"
+      }
     }
   },
   "order": [
     "165593878389ec2bc8",
     "1655938675cf1b291f",
-    "multicolumn"
+    "multicolumn",
+    "1656442669c78a9775"
   ]
 }
