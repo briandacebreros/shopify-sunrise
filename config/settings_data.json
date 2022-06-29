@@ -39,7 +39,6 @@
           "footer-1": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
               "menu": "footer"
             }
           },
@@ -47,8 +46,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/padre-usa.png",
-              "image_width": 160,
-              "alignment": "right"
+              "image_width": 160
             }
           }
         },
@@ -57,12 +55,8 @@
           "53c1c391-33d3-4045-94f0-77c637d06874"
         ],
         "settings": {
-          "show_newsletter": false,
-          "newsletter_title": "",
-          "newsletter_subtitle": "",
-          "newsletter_html": "",
-          "copyright_text": "",
-          "payment_enable": true
+          "bg_color": "#22c3dc",
+          "text_color": "#ececec"
         }
       },
       "main-password-header": {
