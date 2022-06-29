@@ -39,49 +39,6 @@
         "collection": "janitorial-supplies"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "disabled": true,
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/janitorial_supplies_collection.jpg",
-            "title": "Medio ambiente somos bien friendly",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/collection_image.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2"
-      ],
-      "settings": {
-        "title": "",
-        "image_width": "half",
-        "image_ratio": "adapt",
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1656442669c78a9775": {
       "type": "image-button",
       "blocks": {
@@ -127,7 +84,6 @@
   "order": [
     "165593878389ec2bc8",
     "1655938675cf1b291f",
-    "multicolumn",
     "1656442669c78a9775",
     "16564427570669f660"
   ]
