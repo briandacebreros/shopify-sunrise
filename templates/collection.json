@@ -2,10 +2,28 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "blocks": {
+        "7d9e400d-1fcf-4e4d-9954-1667cf29f942": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/janitorial_supplies_collection.jpg"
+          }
+        },
+        "ce03fc47-18ac-4e81-82cc-96ee1e8ebdc5": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/collection_image.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "7d9e400d-1fcf-4e4d-9954-1667cf29f942",
+        "ce03fc47-18ac-4e81-82cc-96ee1e8ebdc5"
+      ],
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "show_collection_slider": true,
+        "show_menu": true,
+        "menu": "tab-menu"
       }
     },
     "product-grid": {
