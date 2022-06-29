@@ -46,7 +46,9 @@
         position: relative;
         display: block;
     }
-
+    .container-swiperMenuTabs {
+        overflow-x: hidden;
+    }
     .container-swiperMenuTabs .swiper {
         width: 100%;
         height: 100%;
@@ -95,7 +97,7 @@
 <h2>{{ section.settings.title }}</h2>
 
 {% if section.settings.menu != blank %}
-  <div class="container-swiperMenuTabs">
+  <div class="container container-swiperMenuTabs">
     <div class="tab">
         <div class="swiperMenuTabs">
             
@@ -118,7 +120,7 @@
 {%- assign i = 0 -%}
 {% for link in section.settings.menu.links -%}
 
-    <div id="{{ link.handle }}" class="tabcontent container-swiperMenuTabs"
+    <div id="{{ link.handle }}" class="container tabcontent container-swiperMenuTabs"
           {% if i == 0 %}style="height:350px; display:block;"{% else %}style="height:325px;"{% endif %} >
           {% assign i = i | plus: 1 %}
         <h3>{{ link.title }}</h3>

@@ -1,5 +1,5 @@
 body {
-
+    overflow-x: hidden;
 }
 
 
@@ -51,7 +51,3 @@ body {
     min-width: 100px;
 }
 
-
-footer {
-    background-color: #2d2d2d;
-}
