@@ -62,4 +62,13 @@ body {
     height: 50px;
     width: 50px;
 }
+.bg-gray {
+    position: absolute;
+    display: block;
+    height: 187px;
+    width: 100%;
+    background-color: gray;
+    left: 0;
+    z-index: -2;
+}
 
