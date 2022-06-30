@@ -1,10 +1,7 @@
-
-
-<div class="section-{{ section.id }}-padding" id="ProductGridContainer">
+<div class="container section-{{ section.id }}-padding" id="ProductGridContainer">
   
   {% if section.settings.enable_sorting or section.settings.enable_filtering %}
     <div class="flex justify-between page-width">
-
       {%- comment -%}
         Find if there is any filter applied
       {%- endcomment -%}
@@ -80,14 +77,18 @@
     </div>
   {% endif %}
 
-  <div class="container flex page-width">
+  <div class="grid grid-cols-12 flex page-width" x-data="{ openFilters: false }">
     {% if section.settings.enable_filtering %}
-      <div class="w-3/12">
-        {% render 'filters', results: collection, enable_sorting: section.settings.enable_filtering %}
-      </div>
+          
+          <div class="col-span-3" id="filtros" x-show="openFilters"
+                @click.away="openFilters = false" x-transition>
+            {% render 'filters', results: collection, enable_sorting: section.settings.enable_filtering %}
+          </div>
     {% endif %}
 
-    <div class="container {% if section.settings.enable_filtering %} w-9/12 {% endif %}">
+    <div class="" :class="openFilters ? 'col-span-9' : 'col-span-12'">
+      <button id="btn-filtro" @click="openFilters = true"
+          style="background:url(//cdn.shopify.com/s/files/1/0566/4607/4438/files/padre-usa_1500x.png?v=1652599925) no-repeat center center; background-size:contain;"></button>
       {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty" id="product-grid" data-id="{{ section.id }}">
@@ -101,13 +102,15 @@
           </div>
         {%- else -%}
           <div class="collection">
-            <ul id="product-grid" data-id="{{ section.id }}" class="grid grid-cols-3 gap-2">
+            <ul id="product-grid" data-id="{{ section.id }}" class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
               {%- for product in collection.products -%}
-              {% render 'product-item',
-                  card_product: product,
-                  show_secondary_image: false,
-              %}
-              <!--
+                <li class="grid__item">
+                  {% render 'product-item',
+                      card_product: product,
+                      show_secondary_image: false,
+                  %}
+                </li>
+                <!--
                 <li class="grid__item">
                   {% render 'card-product',
                     card_product: product,
@@ -117,7 +120,8 @@
                     show_rating: section.settings.show_rating
                   %}
                 </li>
-              -->
+                -->
+              
               {%- endfor -%}
             </ul>
     

@@ -32,6 +32,9 @@ body {
     display: block;
     height: 225px;
 }
+.button {
+    text-align: center;
+}
 .button-buynow {
     background-color: rgb(73, 19, 19);
     color: #FFF;
@@ -49,5 +52,14 @@ body {
     padding: 3px;
     font-size: 12px;
     min-width: 100px;
+}
+
+
+#btn-filtro {
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 50px;
+    width: 50px;
 }
 

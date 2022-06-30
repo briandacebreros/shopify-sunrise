@@ -10,13 +10,12 @@
     position: relative;
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     background-color: purple;
     color: #FFF;
   }
   
   .dropbtn {
-    background-color: #04AA6D;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -51,7 +50,7 @@
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn { font-weight: 600;}
   </style>
 
 {% if section.settings.show_collection_slider %}
@@ -74,7 +73,7 @@
       <div class="container grid grid-cols-4">
         {% for link in section.settings.menu.links -%}
           <div class="dropdown">
-            <button class="dropbtn">{{ link.title }}</button>
+            <a href="{{ link.url }}" class="dropbtn">{{ link.title }}</a>
             <div class="dropdown-content">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
