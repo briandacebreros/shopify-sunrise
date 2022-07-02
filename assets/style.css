@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,700;0,800;1,600;1,700&display=swap');
+
 body {
     overflow-x: hidden;
 }
@@ -10,7 +12,6 @@ body {
     margin-top: 25px;
 }
 .product-item-container .descripcion {
-    min-height: ;
 }
 .product-item-container .imagen-producto {
     position: relative;
