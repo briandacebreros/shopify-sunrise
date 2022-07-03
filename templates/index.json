@@ -34,9 +34,9 @@
     "1655938675cf1b291f": {
       "type": "slider-products",
       "settings": {
-        "title": "Featured collection",
+        "title": "Popular Items",
         "align_text": "text-center",
-        "collection": "janitorial-supplies"
+        "collection": "frontpage"
       }
     },
     "1656442669c78a9775": {
