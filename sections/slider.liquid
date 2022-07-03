@@ -7,6 +7,8 @@
       }
 
       .swiper-slide {
+        position: relative;
+        display: block;
         text-align: center;
         font-size: 18px;
         background: #fff;
@@ -54,12 +56,12 @@
     
     <div class="swiper-wrapper">
         {%- for block in section.blocks -%}
-            <div class="swiper-slide" style="background:url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; background-size:cover;">
+            <div class="swiper-slide slide-main" style="background:url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; background-size:cover;">
                 <span class="cover-screen"></span>
-                <div>
+                <div class="container-slide-text">
                   <h1>{{ block.settings.heading }}</h1>
-                  <h2>{{ block.settings.subheading }}</h2>
-                  <a href="{{ block.settings.link }}">{{ block.settings.button_label }}</a>
+                  <p>{{ block.settings.subheading }}</p>
+                  <a class="button-red" href="{{ block.settings.link.url }}">{{ block.settings.button_label }}</a>
                 </div>
             </div>
         {%- endfor -%}
@@ -97,7 +99,7 @@
     }
   ],
   "blocks": [
-    {
+      {
       "type": "slide",
       "name": "t:sections.slideshow.blocks.slide.name",
       "limit": 1,

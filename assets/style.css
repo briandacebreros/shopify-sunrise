@@ -2,6 +2,111 @@
 
 body {
     overflow-x: hidden;
+    font-family: 'Barlow', sans-serif;
+}
+
+.section-header {
+    background-color: #FFF;
+}
+.nav__item {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    color: #2A3692;
+    font-size: 14px;
+}
+.nav__item:hover {
+    transition: 0.5s;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.container-menu-right {
+    min-width: 350px;
+}
+.account.link {
+    background-color: #2A3692;
+    border-radius: 20px;
+}
+.login-icon {
+    position: relative;
+    display: inline-block;
+    height: 35px;
+    width: 120px;
+}
+.icon-cart {
+    color: #EF1615;
+    border: solid 1px;
+    border-radius: 30px;
+    padding: 5px;
+    height: 30px;
+    width: 55px;
+}
+.cart__count {
+    background-color: #2A3692;
+}
+.menu-phone-number {
+    position: relative;
+    color: #EF1615;
+    font-weight: 600;
+    min-width: 145px;
+}
+.menu-phone-number span {
+
+}
+.phone-icon {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 10px;
+    float: left;
+    margin-right: 5px;;
+}
+
+
+
+
+.slide-main {
+    position: relative;
+    display: block !important;
+}
+.container-slide-text {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-left:10%;
+    text-align: left;
+    color: #FFF;
+    margin-top: 10%;
+}
+.container-slide-text h1 {
+    font-weight: 800;
+    font-size: 50px;
+}
+.container-slide-text p {
+    font-weight: 300;
+}
+
+.mySwiperProducts .swiper-wrapper {
+    height: auto;
+}
+
+.mySwiperProducts h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2A3692;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-top: 25px;
+    
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after, .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    font-size: 22px;
+    font-weight: 700;
+}
+.swiper-button-next-products, .swiper-button-prev-products {
+    color: #D6D6D6;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 53px;
 }
 
 
@@ -19,39 +124,51 @@ body {
 }
 .product-item-container h4 {
     font-size: 14px;
-    color: red;
+    color: #2A3692;
     font-weight: 600;
     text-align: left;
 }
 .product-item-container .subtitle {
-    color: purple;
+    color: #3F3F3F;
     font-size: 12px;
     text-align: left;
 }
 .product-item-image {
     position: relative;
     display: block;
-    height: 225px;
+    height: 175px;
+    margin-bottom: 50px;
 }
 .button {
     text-align: center;
 }
 .button-buynow {
-    background-color: rgb(73, 19, 19);
+    background-color: #EF1615;
     color: #FFF;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 12px;
+    min-width: 100px;
+    float: left;
+}
+.button-details {
+    background-color: #FFF;
+    color: #2A3692;
+    border: solid 1px;
+    border-color: #2A3692;
     border-radius: 20px;
     padding: 3px;
     font-size: 12px;
     min-width: 100px;
 }
-.button-details {
-    background-color: #FFF;
-    color: purple;
-    border: solid 1px;
-    border-color: purple;
+.button-red {
+    background-color: #EF1615;
+    color: #FFF;
+    border: none;
     border-radius: 20px;
-    padding: 3px;
+    padding: 4px 15px;
     font-size: 12px;
+    font-weight: 500;
     min-width: 100px;
 }
 
