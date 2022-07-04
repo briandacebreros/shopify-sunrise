@@ -190,3 +190,32 @@ body {
     z-index: -2;
 }
 
+.image-button {
+    position: relative;
+    display: inline-block;
+    height: 350px;
+}
+.image-button div {
+    position: relative;
+    display: block;
+    z-index: 3;
+    width: 70%;
+    margin: 0 auto;
+}
+.image-button h1 {
+    font-weight: 600;
+    font-size: 28px;
+    color: #FFF;
+    display: inline-block;
+}
+.icon-image-button {
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 55px;
+    width: 55px;
+    margin-bottom: 5px;
+}
+.image-button .info {
+    color: #FFF;
+}

@@ -1,14 +1,4 @@
 <style>
-  .image-button {
-    position: relative;
-    display: inline-block;
-    height: 350px;
-  }
-  .image-button > div {
-    position: relative;
-    display: block;
-    z-index: 3;
-  }
   .cover-screen {
     position: absolute;
     display: block;
@@ -22,9 +12,10 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2">
 {%- for block in section.blocks -%}
-  <div class="image-button " style="background: url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; background-size: cover;">
+  <div class="image-button" style="background: url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; background-size: cover;">
     <span class="cover-screen"></span>
     <div>
+      <span class="icon-image-button" style="background: url({{ 'phone.png' | asset_url }}) no-repeat center center; background-size: contain;"></span>
       <h1>{{ block.settings.title }}</span></h1><br>
       <span>{{ block.settings.info }}</span><br>
       <a class="button" href="{{ block.settings.link }}">{{ block.settings.button }}</a>  
