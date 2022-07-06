@@ -46,20 +46,24 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/medio-ambiente-01.jpg",
-            "title": "Environmental Friendly Corporation",
-            "info": "Going Green and Clean",
+            "title": "<p>Environmental Friendly Corporation<\/p>",
+            "info": "<p>Going Green and Clean<\/p>",
+            "info2": "",
             "button": "",
-            "link": ""
+            "link": "",
+            "color": "#000000"
           }
         },
         "1656442669079de43c-1": {
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/Untitled-1-01.jpg",
-            "title": "Become a Member!",
-            "info": "Get up to 30% OFF",
+            "title": "<p>Become a Member!<\/p>",
+            "info": "<p>Get up to 30% OFF<\/p>",
+            "info2": "",
             "button": "Sign up",
-            "link": "shopify:\/\/pages\/contact"
+            "link": "shopify:\/\/pages\/contact",
+            "color": "#000000"
           }
         }
       },
@@ -76,8 +80,51 @@
     "16564427570669f660": {
       "type": "tab-menu",
       "settings": {
-        "menu": "tab-menu",
-        "title": "Shop"
+        "title": "Shop",
+        "menu": "tab-menu"
+      }
+    },
+    "165707493558dc71eb": {
+      "type": "contact-form2",
+      "blocks": {
+        "eb474df6-9c2d-44a3-84f5-70d46212a1c7": {
+          "type": "email",
+          "settings": {
+            "label": "Email"
+          }
+        },
+        "f98cb675-3db4-4753-a17f-45454fcd9141": {
+          "type": "textarea",
+          "settings": {
+            "label": "Name",
+            "required": true
+          }
+        },
+        "fe7c5fb6-881b-404b-863e-ac5776fa0a79": {
+          "type": "textarea",
+          "settings": {
+            "label": "Message",
+            "required": true
+          }
+        },
+        "e57f4a11-381f-4655-8063-bb60233282fc": {
+          "type": "submit",
+          "settings": {
+            "label": "Title"
+          }
+        }
+      },
+      "block_order": [
+        "eb474df6-9c2d-44a3-84f5-70d46212a1c7",
+        "f98cb675-3db4-4753-a17f-45454fcd9141",
+        "fe7c5fb6-881b-404b-863e-ac5776fa0a79",
+        "e57f4a11-381f-4655-8063-bb60233282fc"
+      ],
+      "settings": {
+        "title": "",
+        "social_enable": true,
+        "background": "#E5E5E5",
+        "text_color": "#000000"
       }
     }
   },
@@ -85,6 +132,7 @@
     "165593878389ec2bc8",
     "1655938675cf1b291f",
     "1656442669c78a9775",
-    "16564427570669f660"
+    "16564427570669f660",
+    "165707493558dc71eb"
   ]
 }
