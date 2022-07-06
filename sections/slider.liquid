@@ -57,7 +57,7 @@
     <div class="swiper-wrapper">
         {%- for block in section.blocks -%}
             <div class="swiper-slide slide-main" style="background:url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; background-size:cover;">
-                <span class="cover-screen"></span>
+                <span class="cover-screen opacity-3"></span>
                 <div class="container-slide-text">
                   <h1>{{ block.settings.heading }}</h1>
                   <p>{{ block.settings.subheading }}</p>

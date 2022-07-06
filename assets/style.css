@@ -5,6 +5,21 @@ body {
     font-family: 'Barlow', sans-serif;
 }
 
+.cover-screen {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.1;
+    z-index: 2;
+}
+.opacity-3 {
+    opacity: 0.3;
+}
+.opacity-8 {
+    opacity: 0.8;
+}
 .section-header {
     background-color: #FFF;
 }
@@ -191,22 +206,23 @@ body {
 }
 
 .image-button {
-    position: relative;
-    display: inline-block;
     height: 350px;
-}
-.image-button div {
     position: relative;
-    display: block;
+}
+.image-button > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     z-index: 3;
     width: 70%;
-    margin: 0 auto;
 }
 .image-button h1 {
     font-weight: 600;
     font-size: 28px;
     color: #FFF;
-    display: inline-block;
+    line-height: 1.1;
+    margin-bottom:10px;
 }
 .icon-image-button {
     position: relative;
@@ -218,4 +234,14 @@ body {
 }
 .image-button .info {
     color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+}
+.image-button .info2 {
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 300;
+}
+.imagen-button:first-child {
+    font-size:35px;
 }
