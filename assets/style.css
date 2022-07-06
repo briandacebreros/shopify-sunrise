@@ -245,3 +245,44 @@ body {
 .imagen-button:first-child {
     font-size:35px;
 }
+
+
+
+.container-contact-form {
+    background-color: #2A3692;
+    color: #FFF;
+    padding: 15px;
+}
+.contact-form-logo {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 110px;
+    background-color: red;
+}
+.container-contact-form input, .container-contact-form textarea {
+    background-color: #4050A4;
+    border: none;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+.container-contact-form h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+.container-contact-form label {
+    font-size: 14px;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+.button-contact {
+    position: relative;
+    display: inherit;
+    width: 200px;
+    background-color: #EF1615;
+    color: #FFF;
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 4px;
+    margin: 15px auto 25px auto;
+}

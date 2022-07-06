@@ -1,6 +1,14 @@
-<div class="grid grid-col-6">
+<div class="grid grid-cols-6">
+    
+    {% form 'contact', class: 'container-contact-form col-span-4' %}
 
-    {% form 'contact', class: 'col-span-4' %}
+    {% if section.settings.title != blank %}
+      <h2 class="">
+        {{ section.settings.title }}
+      </h2>
+      <span class="contact-form-logo" style="background:url({{ section.settings.logo | img_url: '800x' }}) no-repeat center center; background-size:contain;"></span>
+    {% endif %}
+
     {% if form.posted_successfully? %}
       <div class="">
         <p class="">{{ 'templates.contact.form.post_success' | t }}</p>
@@ -170,7 +178,7 @@
                 </div>
 
               {% elsif block.type == 'submit' %}
-                <button type="submit" class="button__primary">
+                <button type="submit" class="button button-contact">
                   {{ block.settings.label }}
                 </button>
               {% endif %}
@@ -205,11 +213,7 @@
               </div>
             {% endif %}
   
-            {% if section.settings.title != blank %}
-              <h2 class="contact-form__title text-2xl font-semibold md:text-3xl py-2">
-                {{ section.settings.title }}
-              </h2>
-            {% endif %}
+            
   
             <!-- content_text -->
             {% if section.settings.content_text != blank %}
@@ -220,12 +224,7 @@
   
   
         </div>
-  
-        {% if section.blocks.size > 0 %}
-          <div class="">
-            
-          </div>
-        {% endif %}
+ 
   
       </div>
     </div>
@@ -247,6 +246,11 @@
           "id": "social_enable",
           "label": "Display social media icons",
           "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
         },
         {
           "type": "header",
