@@ -51,7 +51,8 @@
             "info2": "",
             "button": "",
             "link": "",
-            "color": "#000000"
+            "icon": "shopify:\/\/shop_images\/leaf.png",
+            "color": "#5f675e"
           }
         },
         "1656442669079de43c-1": {
@@ -63,6 +64,7 @@
             "info2": "",
             "button": "Sign up",
             "link": "shopify:\/\/pages\/contact",
+            "icon": "shopify:\/\/shop_images\/prize.png",
             "color": "#000000"
           }
         }
@@ -123,7 +125,7 @@
       "settings": {
         "title": "",
         "social_enable": true,
-        "background": "#E5E5E5",
+        "background": "#e5e5e5",
         "text_color": "#000000"
       }
     }
