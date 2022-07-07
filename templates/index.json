@@ -51,6 +51,7 @@
             "info2": "",
             "button": "",
             "link": "",
+            "icon": "shopify:\/\/shop_images\/leaf.png",
             "color": "#000000"
           }
         },
@@ -63,6 +64,7 @@
             "info2": "",
             "button": "Sign up",
             "link": "shopify:\/\/pages\/contact",
+            "icon": "shopify:\/\/shop_images\/prize.png",
             "color": "#000000"
           }
         }
@@ -80,7 +82,8 @@
     "16564427570669f660": {
       "type": "tab-menu",
       "settings": {
-        "title": "Shop",
+        "logo": "shopify:\/\/shop_images\/padre-usa.png",
+        "title": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias",
         "menu": "tab-menu"
       }
     },
@@ -123,7 +126,7 @@
       "settings": {
         "title": "",
         "social_enable": true,
-        "background": "#E5E5E5",
+        "background": "#e5e5e5",
         "text_color": "#000000"
       }
     }
