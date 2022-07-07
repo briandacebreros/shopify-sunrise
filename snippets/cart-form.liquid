@@ -1,20 +1,21 @@
 <form action="{{ routes.cart_url }}" method="post" class="h-full relative">
 
     <div class="flex justify-between items-center pb-3 pt-3 bg-white px-4 md:px-4">
-        <h3 class="text-base font-semibold">
+        <h3 class="cart-counter">
             {{ 'general.cart.title' | t }}
             {% if cart.item_count > 0 %}
                 <span>({{ cart.item_count | json }})</span>
             {% endif %}
         </h3>
-        <button type="button" title="{{ 'general.cart.continue_shopping' | t }}" class="text-base text-right font-medium p-1" @click="$dispatch('toggle-cart')">
+        <button type="button" title="{{ 'general.cart.continue_shopping' | t }}" class="text-right btn-continue-shopping" @click="$dispatch('toggle-cart')">
+            <span class="cart-drawer-icon" style="background:url({{ 'cart.png' | asset_url }}) no-repeat center center; background-size:contain;"></span>
             {{ 'general.cart.continue_shopping' | t }}
         </button>
     </div>
 
     <div class="mt-6 relative flex-1 px-4 sm:px-6 h-full">
         {% if cart.item_count > 0 %}
-        <div class="flex flex-col overflow-y-scroll justify-between h-full pb-28 font-medium no-scrollbar relative">
+        <div class="flex flex-col justify-between h-full pb-28 font-medium no-scrollbar relative">
             {% assign total_savings = 0 %}
             <div class="">
                 {% for item in cart.items %}
@@ -31,18 +32,18 @@
     
                             <div class="w-8/12">
     
-                                <h3 class="text-base w-10/12">
+                                <h3 class="drawer-product-title">
                                     <a href="{{ item.url }}" title="{{ item.product.title }}" class="w-5/6">{{ item.product.title }}</a>
                                 </h3>
     
                                 {% if item.line_level_discount_allocations.size > 0 %}
                                     {% assign item_discount = item.original_price | minus: item.price %}
     
-                                    <div class="font-medium text-gray-500 mt-2">
-                                        <span class="money text-red-700">
+                                    <div class="drawer-price">
+                                        <span class="money drawer-money">
                                             {{ item.price | money_with_currency }}
                                         </span>
-                                        <s class="text-gray-500">
+                                        <s class="drawer-money">
                                             {{ item.original_price | money_with_currency }}
                                         </s>
                                     </div>
@@ -54,7 +55,7 @@
                                     {% endfor %}
                                 {% else %}
                                     <div class="mt-2 font-medium">
-                                        <span class="money {% if item.product.compare_at_price > item.price %} text-red-700{% endif %}">
+                                        <span class="drawer-money money {% if item.product.compare_at_price > item.price %} text-red-700{% endif %}">
                                             {{ item.price | money_with_currency }}
                                         </span>
                                         {% if item.product.compare_at_price > item.price %}
@@ -79,22 +80,24 @@
                                 {% endif %}
                                 
                                 {% if item.variant.title != 'Default Title' and item.variant.title != 'No Color / OS' and item.variant.title != 'NC / OS' %}
-                                    <div class="w-full flex-none text-xs font-medium text-gray-500 mt-2">{{ item.variant.title }}</div>
+                                    <div class="drawer-variant">{{ item.variant.title }}</div>
                                 {% endif %}
                                 
-                                <div class="flex w-5/6 md:w-1/2 mt-2" x-data="{ qty: {{ item.quantity }}}">
+                                <div class="flex w-5/6 md:w-1/2 drawer-qty" x-data="{ qty: {{ item.quantity }}}">
                                     <button type="button"
                                          title="decrease quantity"
                                          @click.debounce="loading = true; Sunrise.updateQuantity({{ forloop.index }}, --qty);"
-                                         class="text-center cursor-pointer p-1 border border-gray-600 w-3/12">
+                                         class="text-center cursor-pointer p-1 border border-gray-600 w-3/12"
+                                         style="border-right: 1px solid #4F6EED;">
                                         &minus;
                                     </button>
-                                    <input class="text-center bg-white border-t border-b border-gray-600 w-6/12 border-l-0 border-r-0" type="text" type="number" min="1" size="2" value="{{ item.quantity }}" name="quantity">
+                                    <input class="text-center bg-white w-6/12" type="text" type="number" min="1" size="2" value="{{ item.quantity }}" name="quantity">
     
                                     <button type="button" 
                                         title="increase quantity" 
                                         @click.debounce="loading = true; Sunrise.updateQuantity({{ forloop.index }}, ++qty)"
-                                        class="text-center cursor-pointer  p-1 border border-gray-600 w-3/12">
+                                        class="text-center cursor-pointer  p-1 border border-gray-600 w-3/12"
+                                        style="border-left: 1px solid #4F6EED;">
                                         &plus;
                                     </button>
                                 </div>
@@ -112,7 +115,7 @@
                     </div>  
                 {% endfor %}
             </div>
-            <div class="max-w-xs md:max-w-md w-full bg-white border-t-2 border-gray-600 fixed bottom-0 right-0 p-4">
+            <div class="cart-drawer-total">
 
 
                 {%- if cart.cart_level_discount_applications.size > 0 -%}
@@ -135,12 +138,12 @@
                 {% endif %}
     
                 <div class="sub-total flex justify-between text-base pb-2">
-                    <span> {{ 'general.cart.subtotal' | t }}</span>
-                    <span>{{ cart.total_price | money_with_currency }}</span>
+                    <span class="sub-total-label"> {{ 'general.cart.subtotal' | t }}</span>
+                    <span class="sub-total-money">{{ cart.total_price | money_with_currency }}</span>
                 </div>
 
     
-                <button name="checkout" type="submit" class="w-full text-sm px-5 py-2 flex justify-center items-center text-center button__primary cursor-pointer mt-2">
+                <button name="checkout" type="submit" class="drawer-btn-checkout">
                     {{ 'general.cart.checkout' | t }}
                 </button>
     

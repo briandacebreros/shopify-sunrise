@@ -1,11 +1,11 @@
 <div class="bg-white">
     <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8" style="padding: 50px 15px;">
   
-      <div class="grid grid-cols-1" style="max-width: 240px; width: 220px;">
+      <div class="grid grid-cols-1" style="max-width: 240px; width: 155px;">
         <div class="group relative product-item-container">
           <div class="imagen-producto">
             <a class="product-item-image" href="{{ card_product.url }}"
-                style="background: url({{ card_product.featured_media.image | img_url: '1500x' }}) no-repeat center center; background-size: contain;">
+                style="background: url({{ card_product.featured_media.image | img_url: '1500x' }}) no-repeat center left; background-size: contain;">
             </a>
           </div>
           <div class="descripcion flex justify-between">
@@ -64,7 +64,7 @@
                   {% if card_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                   >
                         {%- if card_product.selected_or_first_available_variant.available -%}
-                          {{ 'products.product.add_to_cart' | t }}
+                          Buy
                         {%- else -%}
                           {{ 'products.product.sold_out' | t }}
                         {%- endif -%}
@@ -99,7 +99,7 @@
 
           <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
 
-          <a class="button button-details" href="{{ card_product.url }}">Show details</a>
+          <a class="button button-details" href="{{ card_product.url }}">Details</a>
 
 
 

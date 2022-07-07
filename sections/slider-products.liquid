@@ -15,7 +15,7 @@
 
 <!-- Swiper -->
 <div class="container mx-auto swiper mySwiperProducts">
-    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">{{ section.settings.title }}</h2>
+    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900" style="text-align: {{ section.settings.align_text }};">{{ section.settings.title }}</h2>
     <div class="swiper-wrapper">
       {%- for product in section.settings.collection.products limit: 10 -%}
             <div class="swiper-slide">
@@ -57,7 +57,7 @@
         spaceBetween: 40
         },
         900: {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 40
         }
       }
@@ -83,18 +83,18 @@
         "type": "select",
         "id": "align_text",
         "label": "Align text",
-        "default": "text-center",
+        "default": "left",
         "options": [
           {
-            "value": "text-center",
+            "value": "center",
             "label": "Center"
           },
           {
-            "value": "text-left",
+            "value": "left",
             "label": "Left"
           },
           {
-            "value": "text-right",
+            "value": "right",
             "label": "Right"
           }
         ]
@@ -107,7 +107,7 @@
     ],
     "presets": [
       {
-        "name": "Native product slider"
+        "name": "Slider Products"
       }
     ]
   }

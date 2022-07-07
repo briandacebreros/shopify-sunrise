@@ -21,7 +21,7 @@
     
   })"
   >
-    <h4 class="filters__title font-semibold pb-4 border-b">{{ 'products.facets.filter_by_label' | t }}</h4>
+    <!-- <h4 class="filters__title font-semibold pb-4 border-b">{{ 'products.facets.filter_by_label' | t }}</h4> -->
 
     {% render 'loader' %}
 
@@ -30,7 +30,7 @@
           <details class="filter-group" open>
             <summary class="filter-group-summary flex justify-between py-3 cursor-pointer">
               <div>
-                <span class="font-semibold">{{ filter.label }}</span>
+                <span class="filter-label font-semibold">{{ filter.label }}</span>
       
                 {%- if filter.active_values.size > 0 -%}
                   <span class="text-sm ml-2">({{ filter.active_values.size }})</span>
@@ -74,7 +74,7 @@
                   </ul>
       
                   <div class="filter-group-display__submit my-2 flex justify-end">
-                    <button type="submit" class="bg-black text-white py-1 px-3 text-sm rounded-sm">
+                    <button type="submit" class="btn-apply-filter">
                       Apply
                     </button>
                   </div>
@@ -82,8 +82,8 @@
                   <div class="filter-group-display__price-range my-2 flex justify-between space-x-3">
                     <div class="filter-group-display__price-range-from">
 
-                      <label for="Filter-{{ filter.min_value.param_name }}" class="block">From</label>
-                      <span>{{ cart.currency.symbol }}</span>
+                      <label for="Filter-{{ filter.min_value.param_name }}" class="block">From {{ cart.currency.symbol }}</label>
+                      
                       <input name="{{ filter.min_value.param_name }}"
                         id="Filter-{{ filter.min_value.param_name }}"
                         class="border border-gray-400 rounded-sm p-1"
@@ -98,9 +98,7 @@
       
                     </div>
                     <div class="filter-group-display__price-range-to">
-                      <label for="Filter-{{ filter.max_value.param_name }}" class="block">To</label>
-
-                      <span>{{ cart.currency.symbol }}</span>
+                      <label for="Filter-{{ filter.max_value.param_name }}" class="block">To {{ cart.currency.symbol }}</label>
                       <input name="{{ filter.max_value.param_name }}"
                         id="Filter-{{ filter.max_value.param_name }}"
                         class="border border-gray-400 rounded-sm p-1"
@@ -117,7 +115,7 @@
                   </div>
       
                   <div class="filter-group-display__submit flex justify-end">
-                    <button type="submit" class="bg-black text-white py-1 px-3 text-sm rounded-sm"> {{ 'products.facets.apply' | t }} </button>
+                    <button type="submit" class="btn-apply-filter"> {{ 'products.facets.apply' | t }} </button>
                   </div>
               {%- endcase -%}
             </div>

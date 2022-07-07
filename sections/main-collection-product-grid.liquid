@@ -88,7 +88,7 @@
 
     <div class="" :class="openFilters ? 'col-span-9' : 'col-span-12'">
       <button id="btn-filtro" @click="openFilters = true"
-          style="background:url(//cdn.shopify.com/s/files/1/0566/4607/4438/files/padre-usa_1500x.png?v=1652599925) no-repeat center center; background-size:contain;"></button>
+          style="background:url({{ 'filter.png' | asset_url }}) no-repeat center center; background-size:contain; background-color: #4F6EED;"></button>
       {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty" id="product-grid" data-id="{{ section.id }}">
@@ -102,7 +102,7 @@
           </div>
         {%- else -%}
           <div class="collection">
-            <ul id="product-grid" data-id="{{ section.id }}" class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+            <ul id="product-grid" data-id="{{ section.id }}" class="grid sm:grid-cols-2 md:grid-cols-4 gap-2">
               {%- for product in collection.products -%}
                 <li class="grid__item">
                   {% render 'product-item',

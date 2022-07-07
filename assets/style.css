@@ -139,6 +139,7 @@ body {
 }
 .product-item-container h4 {
     font-size: 14px;
+    line-height: 14px;
     color: #2A3692;
     font-weight: 600;
     text-align: left;
@@ -146,13 +147,15 @@ body {
 .product-item-container .subtitle {
     color: #3F3F3F;
     font-size: 12px;
+    line-height: 12px;
     text-align: left;
+    margin-top: 5px;
 }
 .product-item-image {
     position: relative;
     display: block;
-    height: 175px;
-    margin-bottom: 50px;
+    height: 135px;
+    margin-bottom: 25px;
 }
 .button {
     text-align: center;
@@ -163,7 +166,7 @@ body {
     border-radius: 20px;
     padding: 5px;
     font-size: 12px;
-    min-width: 100px;
+    min-width: 70px;
     float: left;
 }
 .button-details {
@@ -174,7 +177,7 @@ body {
     border-radius: 20px;
     padding: 3px;
     font-size: 12px;
-    min-width: 100px;
+    min-width: 70px;
 }
 .button-red {
     background-color: #EF1615;
@@ -192,8 +195,23 @@ body {
     position: relative;
     display: inline-block;
     float: left;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
+}
+.filter-label {
+    color: #2A3692;
+}
+.btn-apply-filter {
+    background-color: #2A3692;
+    color: #FFF;
+    padding: 2px 15px 5px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.active-filters__remove-filter {
+    background-color: #FFF;
+    border: solid 1px #2A3692;
+    color: #2A3692;
 }
 .bg-gray {
     position: absolute;
@@ -251,7 +269,7 @@ body {
 .container-contact-form {
     background-color: #2A3692;
     color: #FFF;
-    padding: 15px;
+    padding: 25px 85px;
 }
 .contact-form-logo {
     position: relative;
@@ -285,4 +303,135 @@ body {
     font-size: 12px;
     padding: 4px;
     margin: 15px auto 25px auto;
+}
+
+
+h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2A3692;
+}
+.product-page {
+    margin-top: 55px;
+}
+.product-title {
+
+}
+.product-description {
+    color: #2A3692;
+    font-size: 12px;
+    margin: 15px 0px 15px 0px;
+}
+.product__text.subtitle {
+    color: #3F3F3F;
+
+}
+.price__element-normal {
+    font-size: 26px;
+    font-weight: 300;
+    color: #2A3692;
+    margin: 20px 0px;
+}
+.product-form__input input[type=radio]:checked + label {
+    background-color: #2A3692;
+    color: #FFF;
+}
+.product-form__input {
+    
+}
+.product-qty__wrapper {
+    border-radius: 10px;
+    border-color: #2A3692;
+    color: #2A3692;
+}
+.product-form__input label {
+    border-radius: 10px;
+    border-color:#2A3692;
+    color: #2A3692;
+}
+.add-to-cart-button {
+    background-color: #2A3692;
+    border-radius: 10px;
+}
+.shopify-payment-button__button {
+    background-color: #EF1615 !important;
+    border-radius: 10px !important;
+}
+
+
+
+.cart-counter {
+    color: #2A3692;
+    font-weight: 600;
+    font-size: 14px;
+}
+.btn-continue-shopping {
+    color: #818181;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.btn-continue-shopping:hover {
+    font-weight: 500;
+}
+.cart-drawer-icon {
+    position: relative;
+    display: inline-block;
+    height: 18px;
+    width: 25px;
+}
+.drawer-product-title {
+    color: #2A3692;
+    font-weight: 600;
+    font-size: 18px;
+}
+.drawer-money {
+    color: #2A3692;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+.drawer-variant {
+    color: #3F3F3F;
+    margin-left: 5px;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+.drawer-qty {
+    border-radius: 15px;
+    border-color: #2A3692;
+    color: #2A3692;
+    border: solid 1px;
+    height: 22px;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.drawer-qty button {
+    border: none;
+}
+.drawer-qty input {
+    border: none;
+    font-size: 12px;
+}
+.cart-drawer-total {
+    border-top: solid 1px #2A3692;
+}
+.sub-total {
+    padding-top: 25px;
+}
+.sub-total-label {
+    color: #2A3692;
+    font-weight: 600;
+}
+.sub-total-money {
+    color: #3F3F3F;
+    font-weight: 300;
+}
+.drawer-btn-checkout {
+    background-color: #EF1615;
+    width: 100%;
+    color: #FFF;
+    padding: 8px;
+    border-radius: 15px;
+    margin-top: 15px;
+    font-size: 12px;
 }

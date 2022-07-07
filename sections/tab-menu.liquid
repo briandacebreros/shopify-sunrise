@@ -14,16 +14,12 @@
       padding: 14px 16px;
       transition: 0.3s;
       font-size: 17px;
+      width: 100%;
     }
     
     /* Change background color of buttons on hover */
     .tab button:hover {
       font-weight: 600;
-    }
-    
-    /* Create an active/current tablink class */
-    .tab button.active {
-      text-decoration: underline;
     }
     
     /* Style the tab content */
@@ -38,14 +34,23 @@
         height: 250px;
         margin: 5px;
     }
+    .tab-menu-subcategory:hover div {
+      display: block;
+    }
     .tab-menu-subcategory div {
-        z-index: 4;
-        position: relative;
-        display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #272F63;
+      color: #FFF;
+      font-size: 14px;
+      padding: 12px;
+      display: none;
     }
     .container-swiperMenuTabs {
         width: 100%;
         overflow-x: hidden;
+        background-color: #EAEAEA;
     }
     .container-swiperMenuTabs .swiper {
         width: 100%;
@@ -57,7 +62,6 @@
         text-align: center;
         font-size: 18px;
         background: #fff;
-
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -79,19 +83,37 @@
         height: 100%;
         object-fit: cover;
       }
-      .tab-menu-header {
-        position: relative;
-        display: block;
-        margin-bottom: 35px;
+      #header-tabmenu {
         padding-top: 25px;
+        padding-bottom: 55px;
+        background-color: #EAEAEA;
+        margin-top: 55px;
+      }
+      #header-tabmenu p {
+        font-size: 24px;
+        font-weight: 300;
+      }
+      .bg-screen-gray {
+        position: absolute;
+        display: block;
+        height: 445px;
+        background-color:#F7F7F7;
+        width: 100%;
+        z-index: -1;
+      }
+      #tab-menu-header {
         background-color: #EAEAEA;
       }
-      .tab-menu-header span {
-        position: relative;
-        display: inline-block;
+      #tab-menu-header-logo {
         float:left;
-        height: 50px;
+        height: 28px;
+        margin-top: 5px;
+        margin-right: 12px;
         width: 135px;
+        padding-top: 25px;
+      }
+      #tab-menu-header-logo:hover {
+        background-color: #2A3692;
       }
       .tab-menu-header p {
         position: relative;
@@ -101,15 +123,32 @@
         font-weight: 300;
         margin-top: 3px;
         color: #2A3692;
-
       }
-      .tablinks span {
+      .tablink-icono {
         width: 40px;
         float: left;
         height: 52px;
       }
+      .tablinks:hover .tablink-icono {
+        background-color: #272F63 !important;
+        
+      }
+      .tablinks:hover button {
+        color: #272F63 !important;
+      }
+      .tablinks {
+        background-color: #EAEAEA !important;
+      }
       .tablinks.active > .tablink-icono {
         background-color: #272F63 !important;
+        margin-right: 10px;
+      }
+      .swiper-scrollbar {
+        position: relative !important;
+      }
+      .tab button.active {
+        font-weight: 600;
+        color:#272F63;
       }
 </style>
     
@@ -118,17 +157,21 @@
 
 <div style="background-color:#F7F7F7">
 {% if section.settings.menu != blank %}
-  <div class="container-fluid" style="text-align: center;
-                                background-color: #858585;
-                                padding: 35px;">
-    <span style="background:url({{ section.settings.logo | img_url: '400x' }}) no-repeat center center; background-size: contain;"></span>
-    <p>{{ section.settings.title }} </p>
-  </div>
-  <div class="tab-menu-header">
+  <div id="header-tabmenu" class="grid grid-cols-12 sm:grid-cols-12">
+    <span class="col-span-6 col-start-4">
+      <span id="tab-menu-header-logo" style="background:url({{ section.settings.logo | img_url: '400x' }}) no-repeat center center; background-size: contain;"></span>
+      <p>{{ section.settings.title }} </p>
+    </span>
     
-    <div class="container container-swiperMenuTabs">
+  </div>
+  
+  <div class="tab-menu-header container-fluid container-swiperMenuTabs">
+    
+    <div class="container">
+      
       <div class="tab">
           <div class="swiperMenuTabs">
+              <div class="swiper-scrollbar"></div>
               <div class="swiper_tab swiper-wrapper">
                   {%- assign i = 0 -%}
                   {% for link in section.settings.menu.links -%}
@@ -139,25 +182,25 @@
                             {% assign icon = col.metafields.custom.icon %}
                             <span class="tablink-icono" style="background:url({{ icon | img_url:'master' }}) no-repeat center center; 
                                             background-size: contain; background-color: gray;"></span>
-                            {{ obj.title }}
+                            <span class="">{{ obj.title }}</span>
                             
                           </button>
                       </div>
                       {% assign i = i | plus: 1 %}
                   {%- endfor %}
               </div>
-              <div class="swiper-scrollbar" style="height:5px;"></div>
+              
           </div>
       </div>
     </div>
   </div>
 {% endif %}
 
-
+<span class="bg-screen-gray"></span>
 {%- assign i = 0 -%}
 {% for link in section.settings.menu.links -%}
 
-    <div id="{{ link.handle }}" class="container tabcontent container-swiperMenuTabs"
+    <div id="{{ link.handle }}" class="container tabcontent"
           {% if i == 0 %}style="height:350px; display:block;"{% else %}style="height:325px;"{% endif %} >
           {% assign i = i | plus: 1 %}
         <a class="button filled-button" href="{{ link.url }}">Ver todo</a>

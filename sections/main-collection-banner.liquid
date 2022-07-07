@@ -11,8 +11,11 @@
     display: block;
     width: 100%;
     padding: 5px;
-    background-color: purple;
+    background-color: #2A3692;
     color: #FFF;
+  }
+  .collection-menu .dropdown:hover {
+    background-color: #4F6EED;
   }
   
   .dropbtn {
@@ -70,9 +73,9 @@
 {% if section.settings.show_menu %}
   {% if section.settings.menu != blank %}
     <div class="collection-menu">
-      <div class="container grid grid-cols-4">
+      <div class="container grid grid-cols-6">
         {% for link in section.settings.menu.links -%}
-          <div class="dropdown">
+          <div class="dropdown col-span-1">
             <a href="{{ link.url }}" class="dropbtn">{{ link.title }}</a>
             <div class="dropdown-content">
               <a href="#">Link 1</a>
