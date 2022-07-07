@@ -83,7 +83,7 @@
         position: relative;
         display: block;
         margin-bottom: 35px;
-        margin-top: 25px;
+        padding-top: 25px;
         background-color: #EAEAEA;
       }
       .tab-menu-header span {
@@ -106,7 +106,10 @@
       .tablinks span {
         width: 40px;
         float: left;
-        height: 85px;
+        height: 52px;
+      }
+      .tablinks.active > .tablink-icono {
+        background-color: #272F63 !important;
       }
 </style>
     
@@ -115,35 +118,35 @@
 
 <div style="background-color:#F7F7F7">
 {% if section.settings.menu != blank %}
+  <div class="container-fluid" style="text-align: center;
+                                background-color: #858585;
+                                padding: 35px;">
+    <span style="background:url({{ section.settings.logo | img_url: '400x' }}) no-repeat center center; background-size: contain;"></span>
+    <p>{{ section.settings.title }} </p>
+  </div>
   <div class="tab-menu-header">
-    <div class="container" style="margin-bottom: 50px;">
-      <span style="background:url({{ section.settings.logo | img_url: '400x' }}) no-repeat center center; background-size: contain;"></span>
-      <p>{{ section.settings.title }} </p>
-    </div>
     
-  
     <div class="container container-swiperMenuTabs">
       <div class="tab">
           <div class="swiperMenuTabs">
-              
-              <div class="swiper-wrapper">
+              <div class="swiper_tab swiper-wrapper">
                   {%- assign i = 0 -%}
                   {% for link in section.settings.menu.links -%}
                       <div class="swiper-slide">
                           <button class="tablinks {% if i == 0 %}active{% endif %}" onclick="openTab(event, '{{ link.handle }}')">
-                            <span style="background:url({{ section.settings.logo | img_url: '400x' }}) no-repeat center center; background-size: contain;"></span>
-                            
                             {% assign obj = link.object %}
-                            Title: {{ obj.title }}
-                            {% for field in obj.metafields.namespace %}
-                              {{ field | metafield_tag }}0
-                            {% endfor %}
+                            {% assign col = collections[obj.handle] %}
+                            {% assign icon = col.metafields.custom.icon %}
+                            <span class="tablink-icono" style="background:url({{ icon | img_url:'master' }}) no-repeat center center; 
+                                            background-size: contain; background-color: gray;"></span>
+                            {{ obj.title }}
+                            
                           </button>
                       </div>
                       {% assign i = i | plus: 1 %}
                   {%- endfor %}
               </div>
-              <div class="swiper-scrollbar2" style="height:5px;"></div>
+              <div class="swiper-scrollbar" style="height:5px;"></div>
           </div>
       </div>
     </div>
@@ -157,7 +160,6 @@
     <div id="{{ link.handle }}" class="container tabcontent container-swiperMenuTabs"
           {% if i == 0 %}style="height:350px; display:block;"{% else %}style="height:325px;"{% endif %} >
           {% assign i = i | plus: 1 %}
-        <h3>{{ link.title }}</h3>
         <a class="button filled-button" href="{{ link.url }}">Ver todo</a>
         {% if link.levels > 0 %}
             <div class="swiperMenuTabsSub">
@@ -216,9 +218,9 @@
 
 
 
-    var swiper = new Swiper(".swiperMenuTabs", {
+    var swiper_tab = new Swiper(".swiperMenuTabs", {
       scrollbar: {
-        el: ".swiper-scrollbar2"
+        el: ".swiper-scrollbar"
       },
       breakpoints: {
         // when window width is >= 320px
