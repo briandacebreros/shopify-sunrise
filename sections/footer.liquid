@@ -4,9 +4,10 @@
   }
   .footer-img {
     position: relative;
-    display: block;
+    display: inline-block;
     min-height: 50px;
-    width: 100%;
+    width: 220px;
+    
   }
   .footer-link:hover {
     font-weight: 600;
@@ -18,16 +19,17 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'link_list' -%}
-            <div>
+            <div class="link_list">
               <h3>{{ block.settings.menu.title }}</h3>
+              <hr>
               {% for link in block.settings.menu.links -%}
                 <a class="footer-link" href="#">{{ link.title }}<br></a>
               {% endfor %}
             </div>
           {%- when 'image' -%}
-            <div class="">
+            <div class="" style="text-align: center;">
               <span class="footer-img" style="background:url({{ block.settings.image | img_url: '1500x' }}) no-repeat center center; 
-                        background-size:contain; width:{{ block.settings.image_width }}px;"></span>
+                        background-size:contain;"></span>
             </div>
         {%- endcase -%}
       {% endfor %}

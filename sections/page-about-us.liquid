@@ -1,12 +1,14 @@
 
-    <div class="about-us container grid grid-cols-3 gap-4 font-mono text-sm font-bold leading-6">
+    <div class="about-us container grid grid-cols-3 gap-4">
         <div class="p-4 md:col-span-2 sm:col-span-3">
-            <h1>{{ section.settings.title }}</h1>
+            <h1>{{ section.settings.title | upcase }}</h1>
             <p>{{ section.settings.text1 }}</p>
         </div>
         <div class="p-4 md:col-span-1 sm:col-span-3"><p><img src="{{ section.settings.imagen | img_url: '1500x' }}" /></p></div>
         <div class="p-4 col-span-3">
             <span class="bg-gray"></span>
+            <span class="img-about-us" style="background:url({{ section.settings.logo | img_url }}) no-repeat center center; 
+                                                    background-size:contain;"></span>
             <p>{{ section.settings.text2 }}</p>
         </div>
     </div> 
@@ -24,6 +26,11 @@
             "type": "richtext",
             "id": "text1",
             "label": "Primer texto"
+        },
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo image"
         },
         {
             "type": "richtext",

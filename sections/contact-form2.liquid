@@ -1,12 +1,14 @@
 <div class="grid grid-cols-12">
     
-    {% form 'contact', class: 'container-contact-form col-span-4 col-start-5' %}
+    {% form 'contact', class: 'container-contact-form col-span-6 col-start-4' %}
 
     {% if section.settings.title != blank %}
       <h2 class="">
         {{ section.settings.title }}
       </h2>
       <span class="contact-form-logo" style="background:url({{ section.settings.logo | img_url: '800x' }}) no-repeat center center; background-size:contain;"></span>
+    {% else %}
+      <h2 class="">Contact Us</h2>
     {% endif %}
 
     {% if form.posted_successfully? %}

@@ -11,9 +11,9 @@
 <section class="container product-page">
   <div class="grid grid-cols-12">
 
-    <div class="col-span-7" x-data="Slider">
+    <div class="col-span-6" x-data="Slider">
 
-      <div class="flex overflow-x-scroll md:grid grid-cols-2 gap-3 snap-x snap-mandatory" x-ref="slider" 
+      <div class="flex md:grid grid-cols-2 gap-3 snap-x snap-mandatory" x-ref="slider" 
         @keydown.right="next"
         @keydown.left="prev">
         {% for media in product.media %}
@@ -48,7 +48,7 @@
           {%- when '@app' -%}
             {% render block %}
           {%- when 'text' -%}
-            <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+            <p class="product-text-shop product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
               {{- block.settings.text -}}
             </p>
           {%- when 'title' -%}
@@ -357,6 +357,9 @@
       </div>
     </div>
 
+    <div class="col-span-12">
+      <hr class="hr-section">
+    </div>
   </div>
 
   {% assign popups = section.blocks | where: "type", "popup" %}

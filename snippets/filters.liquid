@@ -53,7 +53,7 @@
                 {%- when 'boolean' or 'list' -%}
                   <ul class="filter-group-display__list">
                     {%- for filter_value in filter.values -%}
-                      <li class="filter-group-display__list-item py-2">
+                      <li class="filter-group-display__list-item py-1">
                         <label class="flex items-center" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
                         <input type="checkbox"
                           class="mr-2 accent-black"

@@ -1,6 +1,9 @@
 <div class="container section-{{ section.id }}-padding" id="ProductGridContainer">
-  
+
   {% if section.settings.enable_sorting or section.settings.enable_filtering %}
+    <div>
+      <h1 style="font-size: 36px; margin-top:25px; padding-left:20px;">Featured Products</h1>
+    </div>
     <div class="flex justify-between page-width">
       {%- comment -%}
         Find if there is any filter applied
@@ -11,7 +14,7 @@
             {% assign hasFilter = true %}
         {% endfor %}
       {% endfor %}
-
+      
       <div class="active-filters flex space-x-3 items-center">
           {% if hasFilter %}
             <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear flex items-center border text-white text-sm py-1 px-3 bg-[#757575] rounded-full">
@@ -38,6 +41,7 @@
             {%- endif- %}
           {%- endfor -%}
       </div>
+      
 
       {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
       <div class="collection__sort flex justify-end" 
@@ -134,8 +138,9 @@
     </div>
 
   </div>
-
 </div>
+
+
 
 {% schema %}
 {
