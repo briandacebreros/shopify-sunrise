@@ -27,7 +27,7 @@
 
     <form class="filter-form divide-y divide-gray-300" x-ref="filter_form">
         {%- for filter in collection.filters -%}
-          <details class="filter-group" open>
+          <details class="filter-group">
             <summary class="filter-group-summary flex justify-between py-3 cursor-pointer">
               <div>
                 <span class="filter-label font-semibold">{{ filter.label }}</span>

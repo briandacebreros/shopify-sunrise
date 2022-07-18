@@ -20,6 +20,7 @@
     /* Change background color of buttons on hover */
     .tab button:hover {
       font-weight: 600;
+      color: #272F63;
     }
     
     /* Style the tab content */
@@ -36,16 +37,20 @@
     }
     .tab-menu-subcategory:hover div {
       display: block;
+      padding: 0px;
+    }
+    .tab-menu-subcategory:hover .cover-screen-tabmenu {
+      display: block;
     }
     .tab-menu-subcategory div {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: #272F63;
       color: #FFF;
       font-size: 14px;
       padding: 12px;
       display: none;
+      height: 40%;
     }
     .container-swiperMenuTabs {
         width: 100%;
@@ -61,7 +66,7 @@
     .container-swiperMenuTabs .swiper-slide {
         text-align: center;
         font-size: 18px;
-        background: #fff;
+        background: transparent;
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -92,63 +97,36 @@
       #header-tabmenu p {
         font-size: 24px;
         font-weight: 300;
-      }
-      .bg-screen-gray {
-        position: absolute;
-        display: block;
-        height: 445px;
-        background-color:#F7F7F7;
-        width: 100%;
-        z-index: -1;
-      }
-      #tab-menu-header {
-        background-color: #EAEAEA;
-      }
-      #tab-menu-header-logo {
-        float:left;
-        height: 28px;
-        margin-top: 5px;
-        margin-right: 12px;
-        width: 135px;
-        padding-top: 25px;
-      }
-      #tab-menu-header-logo:hover {
-        background-color: #2A3692;
-      }
-      .tab-menu-header p {
-        position: relative;
-        display: inline-block;
-        float: left;
-        font-size: 20px;
-        font-weight: 300;
-        margin-top: 3px;
         color: #2A3692;
+        text-align: center;
       }
-      .tablink-icono {
-        width: 40px;
-        float: left;
-        height: 52px;
+      .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+        height: 10px;
       }
-      .tablinks:hover .tablink-icono {
-        background-color: #272F63 !important;
-        
+
+      .cover-screen-tabmenu {
+        position: absolute;
+        display: none;
+        height: 100%;
+        width: 100%;
+        background-color: #272F63;
+        opacity: 0.8;
+        bottom: 0;
       }
-      .tablinks:hover button {
-        color: #272F63 !important;
-      }
-      .tablinks {
-        background-color: #EAEAEA !important;
-      }
-      .tablinks.active > .tablink-icono {
-        background-color: #272F63 !important;
-        margin-right: 10px;
-      }
-      .swiper-scrollbar {
-        position: relative !important;
-      }
-      .tab button.active {
-        font-weight: 600;
-        color:#272F63;
+      
+
+      .btn-tabmenu-viewall {
+        position: relative;
+        display: block;
+        background-color: #EF1615;
+        width: 150px;
+        border-radius: 20px;
+        text-align: center;
+        color: #FFF;
+        padding: 9px;
+        font-size: 12px;
+        margin: 0 auto;
+        margin-top: 20px;
       }
 </style>
     
@@ -171,18 +149,18 @@
       
       <div class="tab">
           <div class="swiperMenuTabs">
-              <div class="swiper-scrollbar"></div>
+              <!-- <div class="swiper-scrollbar"></div> -->
               <div class="swiper_tab swiper-wrapper">
                   {%- assign i = 0 -%}
                   {% for link in section.settings.menu.links -%}
                       <div class="swiper-slide">
-                          <button class="tablinks {% if i == 0 %}active{% endif %}" onclick="openTab(event, '{{ link.handle }}')">
+                          <a class="tablinks {% if i == 0 %}active{% endif %}" onclick="openTab(event, '{{ link.handle }}')">
                             {% assign obj = link.object %}
                             {% assign col = collections[obj.handle] %}
                             {% assign icon = col.metafields.custom.icon %}
-                            <span class="tablink-icono" style="background:url({{ icon | img_url:'master' }}) no-repeat center center; 
-                                            background-size: contain; background-color: gray;"></span>
-                            <span class="">{{ obj.title }}</span>
+                            <a href="#"><span class="tablink-icono" style="background:url({{ icon | img_url:'master' }}) no-repeat center center; 
+                                            background-size: contain;"></span></a>
+                            <a href="#"><span class="tablinks-txt">{{ obj.title }}</span></a>
                             
                           </button>
                       </div>
@@ -201,42 +179,30 @@
 {% for link in section.settings.menu.links -%}
 
     <div id="{{ link.handle }}" class="container tabcontent"
-          {% if i == 0 %}style="height:350px; display:block;"{% else %}style="height:325px;"{% endif %} >
+          {% if i == 0 %}style="height:395px; display:block;"{% else %}style="height:395px;"{% endif %} >
           {% assign i = i | plus: 1 %}
-        <a class="button filled-button" href="{{ link.url }}">Ver todo</a>
+        
         {% if link.levels > 0 %}
             <div class="swiperMenuTabsSub">
                 <div class="swiper-wrapper">
                     {% for sublink in link.links -%}
                         <div class="swiper-slide tab-menu-subcategory" 
-                                style="background:url(https://cdn.shopify.com/s/files/1/0566/4607/4438/files/janitorial_supplies_collection_1500x.jpg?v=1652525956) no-repeat center center; background-size: cover;">
-                            <span class="cover-screen"></span>
+                                style="background:url({{ sublink.object.image | image_url }}) no-repeat center center; background-size: cover;">
+                            
                             <div>
+                                <span class="cover-screen-tabmenu"></span>
                                 <h1>{{ sublink.title }}</h1>
-                                <a class="button filled-button" href="{{ sublink.url }}">Ver</a>
                             </div>
                         </div>
                     {% endfor %}
-                    
-                    <div class="swiper-slide tab-menu-subcategory" 
-                                style="background:url(https://cdn.shopify.com/s/files/1/0566/4607/4438/files/janitorial_supplies_collection_1500x.jpg?v=1652525956) no-repeat center center; background-size: cover;">
-                            <span class="cover-screen"></span>
-                            <div>
-                                <h1>{{ sublink.title }}</h1>
-                            </div>
-                        </div>
-                        <div class="swiper-slide tab-menu-subcategory" 
-                                style="background:url(https://cdn.shopify.com/s/files/1/0566/4607/4438/files/janitorial_supplies_collection_1500x.jpg?v=1652525956) no-repeat center center; background-size: cover;">
-                            <span class="cover-screen"></span>
-                            <div>
-                                <h1>{{ sublink.title }}</h1>
-                            </div>
-                        </div>
+                 
                 </div>
-                <div class="swiper-pagination2"></div>
+                <!-- <div class="swiper-pagination2"></div> -->
                 
             </div>
-            
+            <div>
+              <a class="btn-tabmenu-viewall" href="{{ link.url }}">View all products</a>
+            </div>
         {% endif %}
         
     </div>
@@ -334,7 +300,8 @@
     {
         "type": "text",
         "id": "title",
-        "label": "Texto"
+        "label": "Texto",
+        "default": "offers a full range of products for the following industries"
     },
     {
         "type": "link_list",

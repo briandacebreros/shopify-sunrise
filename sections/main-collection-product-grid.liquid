@@ -1,9 +1,7 @@
 <div class="container section-{{ section.id }}-padding" id="ProductGridContainer">
 
   {% if section.settings.enable_sorting or section.settings.enable_filtering %}
-    <div>
-      <h1 style="font-size: 36px; margin-top:25px; padding-left:20px;">Featured Products</h1>
-    </div>
+
     <div class="flex justify-between page-width">
       {%- comment -%}
         Find if there is any filter applied
@@ -14,6 +12,8 @@
             {% assign hasFilter = true %}
         {% endfor %}
       {% endfor %}
+
+      
       
       <div class="active-filters flex space-x-3 items-center">
           {% if hasFilter %}
@@ -43,6 +43,25 @@
       </div>
       
 
+      
+
+    </div>
+  {% endif %}
+
+  <div class="grid grid-cols-12 flex page-width" x-data="{ openFilters: false }">
+    {% if section.settings.enable_filtering %}
+          
+          <div class="col-span-12 md:col-span-3" id="filtros" x-show="openFilters"
+                @click.away="openFilters = false" x-transition>
+            {% render 'filters', results: collection, enable_sorting: section.settings.enable_filtering %}
+          </div>
+    {% endif %}
+
+    <div class="" :class="openFilters ? 'col-span-9' : 'col-span-12'">
+      <button id="btn-filtro" @click="openFilters = true"
+          style="background:url({{ 'filter.png' | asset_url }}) no-repeat center center; background-size:contain; background-color: #4F6EED;"></button>
+
+      <h1 class="collection-title">Featured Products</h1>
       {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
       <div class="collection__sort flex justify-end" 
         x-data="{
@@ -77,22 +96,6 @@
         </select>
         
       </div>
-
-    </div>
-  {% endif %}
-
-  <div class="grid grid-cols-12 flex page-width" x-data="{ openFilters: false }">
-    {% if section.settings.enable_filtering %}
-          
-          <div class="col-span-3" id="filtros" x-show="openFilters"
-                @click.away="openFilters = false" x-transition>
-            {% render 'filters', results: collection, enable_sorting: section.settings.enable_filtering %}
-          </div>
-    {% endif %}
-
-    <div class="" :class="openFilters ? 'col-span-9' : 'col-span-12'">
-      <button id="btn-filtro" @click="openFilters = true"
-          style="background:url({{ 'filter.png' | asset_url }}) no-repeat center center; background-size:contain; background-color: #4F6EED;"></button>
       {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty" id="product-grid" data-id="{{ section.id }}">
@@ -106,9 +109,9 @@
           </div>
         {%- else -%}
           <div class="collection">
-            <ul id="product-grid" data-id="{{ section.id }}" class="grid sm:grid-cols-2 md:grid-cols-4 gap-2">
+            <ul id="product-grid" data-id="{{ section.id }}" class="grid grid-cols-12">
               {%- for product in collection.products -%}
-                <li class="grid__item">
+                <li class="grid__item col-span-6 md:col-span-4 lg:col-span-3">
                   {% render 'product-item',
                       card_product: product,
                       show_secondary_image: false,

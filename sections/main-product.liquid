@@ -11,7 +11,7 @@
 <section class="container product-page">
   <div class="grid grid-cols-12">
 
-    <div class="col-span-6" x-data="Slider">
+    <div class="col-span-12 md:col-span-6" x-data="Slider">
 
       <div class="flex md:grid grid-cols-2 gap-3 snap-x snap-mandatory" x-ref="slider" 
         @keydown.right="next"
@@ -39,7 +39,7 @@
       
     </div>
 
-    <div class="col-span-5">
+    <div class="col-span-12 md:col-span-5">
       <div>
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 

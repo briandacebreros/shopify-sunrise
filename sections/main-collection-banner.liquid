@@ -70,24 +70,6 @@
 {% endif %}
 
 
-{% if section.settings.show_menu %}
-  {% if section.settings.menu != blank %}
-    <div class="collection-menu">
-      <div class="container grid grid-cols-6">
-        {% for link in section.settings.menu.links -%}
-          <div class="dropdown col-span-1">
-            <a href="{{ link.url }}" class="dropbtn">{{ link.title }}</a>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
-{% endif %}
 
 <script>
   var swiper = new Swiper(".mySwiperComercial", {
@@ -100,7 +82,7 @@
 
 {% schema %}
 {
-  "name": "Collection",
+  "name": "Collection Banner",
   "class": "section",
   "settings": [
     {
@@ -108,17 +90,6 @@
       "id": "show_collection_slider",
       "default": false,
       "label": "Show Slider"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_menu",
-      "default": true,
-      "label": "Show Menu"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Menu"
     }
   ],
   "blocks": [
@@ -137,7 +108,7 @@
   ],
   "presets": [
     {
-      "name": "Collection",
+      "name": "Collection Banner",
       "blocks": [
         {
           "type": "slide"
